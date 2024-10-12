@@ -4,7 +4,11 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.ToString;
 
+@AllArgsConstructor
+@ToString
 @Entity // 엔티티 선언
 public class Article {
 
@@ -16,6 +20,7 @@ public class Article {
     @Column
     private String content;
 
+    /* 롬복으로 대체
     public Article(Long id, String content, String title) {
         this.id = id;
         this.content = content;
@@ -30,6 +35,7 @@ public class Article {
                 ", content='" + content + '\'' +
                 '}';
     }
+     */
 
-   
+
 }
