@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
@@ -12,6 +13,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity // 엔티티 선언
+@Getter
 public class Article {
 
     @Id // 엔티티의 대푯값 선언
@@ -21,6 +23,10 @@ public class Article {
     private String title;
     @Column
     private String content;
+
+    public Long getId() {
+        return id;
+    }
 
     /* 롬복으로 대체
     public Article(Long id, String content, String title) {
